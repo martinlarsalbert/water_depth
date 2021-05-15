@@ -24,3 +24,9 @@ jobs:
  
       - name: Get TDS posts about GitHub Actions                                 
         run: scrapy runspider posts_spider.py -o posts.json
+      
+      - name: Upload artifact                      
+        uses: actions/upload-artifact@v2                        
+        with:                                 
+          name: posts                                 
+          path: posts.json
