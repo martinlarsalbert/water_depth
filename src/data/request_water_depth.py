@@ -52,7 +52,7 @@ def run(save_dir_path = 'data/raw'):
     data_depth = get(station=station)
     
     now = datetime.datetime.now()
-    file_name = f'station_{station}_{now}.json'
+    file_name = f'station_{station}_{now}.json'  # This is in fact csv, but is must be called json for the auto publish to work...
     file_path = os.path.join(save_dir_path, file_name)
     print(f'Saving to:{file_path}')
     data_depth.to_csv(file_path)

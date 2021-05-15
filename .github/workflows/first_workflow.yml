@@ -1,13 +1,9 @@
 name: First Workflow                                               
-on: push                                                  
+on:
+  schedule:
+    - cron:  '* * * * *' # Every day. Ref https://crontab.guru/examples.html                                                 
 jobs:                         
-  first-job:                           
-    name: Say hi                           
-    runs-on: ubuntu-latest                           
-    steps:                           
-    - name: Print a greeting                             
-      run: echo Hi from our first workflow!!!
-  get-posts-job:                            
+  get-water-depth:                            
     name: Get TDS posts                            
     runs-on: ubuntu-latest     
     steps:                             
@@ -19,17 +15,17 @@ jobs:
         with:                                 
           python-version: '3.8'          
                                                   
-      - name: Install Scrapy                               
+      - name: Install dependencies                              
         run: pip install pandas requests         
  
-      - name: Get TDS posts about GitHub Actions                                 
+      - name: Get water depth                                
         run: python src/data/request_water_depth.py
       
-      - name: Upload artifact                      
-        uses: actions/upload-artifact@v2                        
-        with:                                 
-          name: posts                                 
-          path: posts.json
+#      - name: Upload artifact                      
+#        uses: actions/upload-artifact@v2                        
+#        with:                                 
+#          name: posts                                 
+#          path: posts.json
 
       - uses: mikeal/publish-to-github-action@master
         env:
