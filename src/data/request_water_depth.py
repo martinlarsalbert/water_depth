@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import requests
 import xml.etree.ElementTree as ET
 import re
