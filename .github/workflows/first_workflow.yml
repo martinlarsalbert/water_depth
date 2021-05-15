@@ -1,7 +1,7 @@
 name: First Workflow                                               
 on:
   schedule:
-    - cron:  '*/5 * * * *' # Every day. Ref https://crontab.guru/examples.html                                                 
+    - cron:  '0 0 * * *' # Every day. Ref https://crontab.guru/examples.html                                                 
 jobs:                         
   get-water-depth:                            
     name: Get TDS posts                            
