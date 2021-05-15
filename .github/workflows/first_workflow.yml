@@ -20,10 +20,10 @@ jobs:
           python-version: '3.8'          
                                                   
       - name: Install Scrapy                               
-        run: pip install scrapy         
+        run: pip install pandas,requests         
  
       - name: Get TDS posts about GitHub Actions                                 
-        run: scrapy runspider posts_spider.py -o posts.json
+        run: python src/data/request_water_depth.py
       
       - name: Upload artifact                      
         uses: actions/upload-artifact@v2                        
