@@ -20,7 +20,7 @@ jobs:
           python-version: '3.8'          
                                                   
       - name: Install Scrapy                               
-        run: pip install pandas,requests         
+        run: pip install pandas requests         
  
       - name: Get TDS posts about GitHub Actions                                 
         run: python src/data/request_water_depth.py
