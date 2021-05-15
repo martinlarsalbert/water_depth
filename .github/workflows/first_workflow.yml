@@ -25,7 +25,7 @@ jobs:
       - name: Get TDS posts about GitHub Actions                                 
         run: scrapy runspider posts_spider.py -o posts.json
       - uses: mikeal/publish-to-github-action@master
-      env:
+        env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you
       
       - name: Upload artifact                      
