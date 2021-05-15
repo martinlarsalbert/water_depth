@@ -42,7 +42,7 @@ def get(station:int=2110)->pd.Series:
     data_depth = get_data_from_response(response=response)
     return data_depth
 
-def run(save_dir_path = 'data'):
+def run(save_dir_path = 'data/raw'):
 
     if not os.path.exists(save_dir_path):
         os.mkdir(save_dir_path)
