@@ -2,10 +2,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('dark_background')
+import docs
+import os.path
 
 import src.data.water_depth as water_depth
 
-def plot(save_path=None):
+def plot():
 
     data_depth = water_depth.get()
     
@@ -32,5 +34,5 @@ def plot(save_path=None):
     ax.grid()
 
     ## Save?
-    if not save_path is None:
-        fig.savefig(save_path)
+    save_path = os.path.join(docs.path,'periods.png')
+    fig.savefig(save_path)
