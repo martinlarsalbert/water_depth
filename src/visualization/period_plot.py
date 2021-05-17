@@ -22,7 +22,7 @@ def plot():
     ## Plotting:
     
     fig,ax=plt.subplots()
-    fig.set_size_inches(18,6)
+    fig.set_size_inches(18,15)
 
     for period,group in groups:
         group.index-=group.index[0]
