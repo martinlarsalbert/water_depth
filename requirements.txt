@@ -13,3 +13,6 @@ numpy
 pandas
 matplotlib
 requests
+scipy
+statsmodels
+sklearn
