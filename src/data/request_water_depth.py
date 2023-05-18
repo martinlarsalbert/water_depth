@@ -25,7 +25,7 @@ def get_data_from_response(response)->pd.Series:
 
         s.name = s.date
 
-        df_data = df_data.append(s)
+        df_data = pd.concat((df_data,s))
 
     df_data.drop(columns=['date'], inplace=True)
     df_data.index = pd.to_datetime(df_data.index)
